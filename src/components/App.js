@@ -1,5 +1,6 @@
 import React from 'react';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './Header.js';
 import Main from './Main.js';
@@ -108,6 +109,10 @@ function App() {
     <CurrentUserContext.Provider value={currentUser}>
 
       <Header />
+      <Routes>
+        <Route path="/sign-up" element={<Register />} />
+        <Route path="/sign-in" element={<Login />} />
+      </Routes>
       <Main
         onEditProfile={handleEditProfileClick}
         onAddPlace={handleAddPlaceClick}
