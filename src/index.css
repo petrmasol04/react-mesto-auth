@@ -8,6 +8,11 @@
 @import url(../src/blocks/header/__logo/header__logo.css);
 @import url(../src/blocks/header/__logo-link/header__logo-link.css);
 
+@import url(../src/blocks/menu/menu.css);
+@import url(../src/blocks/menu/__link/menu__link.css);
+@import url(../src/blocks/menu/__email/menu__email.css);
+@import url(../src/blocks/menu/__button/menu__button.css);
+
 @import url(../src/blocks/profile/profile.css);
 @import url(../src/blocks/profile/__edit-avatar/profile__edit-avatar.css);
 @import url(../src/blocks/profile/__avatar/profile__avatar.css);

@@ -12,6 +12,10 @@ import EditAvatarPopup from './EditAvatarPopup';
 import api from '../utils/Api';
 import '../index.css';
 import AddPlacePopup from './AddPlacePopup ';
+import Login from './Login.js';
+import Register from './Register.js';
+import ProtectedRouteElement from './ProtectedRoute';
+
 
 function App() {
 
@@ -21,6 +25,7 @@ function App() {
   const [selectedCard, setSelectedCard] = React.useState({});
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
+  const [loggedIn, setLoggedIn] = React.useState(true);
 
   React.useEffect(() => {
     Promise.all([api.getUserInfo(), api.getInitialCards()])
@@ -110,18 +115,22 @@ function App() {
 
       <Header />
       <Routes>
+        <Route path="/" element={
+          <ProtectedRouteElement
+            element={Main}
+            loggedIn={loggedIn}
+            onEditProfile={handleEditProfileClick}
+            onAddPlace={handleAddPlaceClick}
+            onEditAvatar={handleEditAvatarClick}
+            onCardClick={handleCardClick}
+            onCardLike={handleCardLike}
+            onCardDelete={handleCardDelete}
+            cards={cards}
+          />} />
         <Route path="/sign-up" element={<Register />} />
         <Route path="/sign-in" element={<Login />} />
       </Routes>
-      <Main
-        onEditProfile={handleEditProfileClick}
-        onAddPlace={handleAddPlaceClick}
-        onEditAvatar={handleEditAvatarClick}
-        onCardClick={handleCardClick}
-        onCardLike={handleCardLike}
-        onCardDelete={handleCardDelete}
-        cards={cards}
-      />
+
       <Footer />
       <EditProfilePopup isOpen={isEditProfilePopupOpen} onClose={closeAllPopups} onUpdateUser={handleUpdateUser} />
       <EditAvatarPopup isOpen={isEditAvatarPopupOpen} onClose={closeAllPopups} onUpdateAvatar={handleUpdateAvatar} />

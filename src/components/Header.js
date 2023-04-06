@@ -1,4 +1,5 @@
 import logoHeader from '../images/header__logo.svg';
+import NavBar from './NavBar';
 
 function Header() {
     return (
@@ -7,6 +8,7 @@ function Header() {
                 <a href="#" className="header__logo-link">
                     <img src={logoHeader} className="header__logo" alt="Логотип" />
                 </a>
+                <NavBar />
             </div>
         </header>
     );
