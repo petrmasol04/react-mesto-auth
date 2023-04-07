@@ -1,6 +1,7 @@
 import { Routes, Route, NavLink } from 'react-router-dom';
 
 function NavBar({ userEmail, handleLogout }) {
+
     return (
         <nav className='menu'>
             <Routes>
@@ -18,7 +19,6 @@ function NavBar({ userEmail, handleLogout }) {
                 }> </Route>
             </Routes>
         </nav>
-
     )
 }
 

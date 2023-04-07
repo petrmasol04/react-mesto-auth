@@ -2,6 +2,7 @@ import successfully from '../images/successfully.svg';
 import unsuccessfully from '../images/unsuccessfully.svg';
 
 function InfoTooltip({ isOpen, containerName, onClose, isSuccess }) {
+
     return (
         <div className={`popup ${isOpen ? 'popup_open' : ''}`}>
             <div className={`popup__container ${containerName}`}>
@@ -17,4 +18,5 @@ function InfoTooltip({ isOpen, containerName, onClose, isSuccess }) {
         </div>
     )
 }
+
 export default InfoTooltip;
