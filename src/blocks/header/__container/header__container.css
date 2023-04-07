@@ -2,7 +2,6 @@
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(84, 84, 84, .7);
-    max-width: 880px;
     justify-content: space-between;
     padding-bottom: 41px;
 }
